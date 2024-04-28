@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr-FR" class="w-screen h-screen overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LazyPiou | Mes rappels</title>
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ffc40d">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => {
+                        console.log('Service worker registered', reg);
+                    })
+                    .catch((err) => {
+                        console.log('Service worker registration failed', err);
+                    });
+            });
+        }
+    </script>
+</head>
+<body class="*:selection:bg-yellow-300 *:selection:text-black w-screen h-screen flex items-center justify-center overflow-hidden">
+    <div class="bg-yellow-200 w-full h-full flex items-center justify-center flex-col gap-10 overflow-hidden">
+        <div class="flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center relative w-24 h-20">
+                <img id="logo" src="public/images/logo.png" alt="LazyPiou" class="object-contain drop-shadow-sm w-24 h-20">
+                <span id="logo-ping" class="animate-ping absolute w-full h-full bg-white rounded-full invisible"></span>    
+            </div>
+            <h1 class="text-center font-display font-semibold text-gray-800 text-3xl">LazyPiou</h1>
+            <h2 class="text-center font-display font-light text-gray-600 text-1xl">Gestionnaire de rappels</h2>
+        </div>
+        <button class="border-black border-2 flex justify-center items-center absolute top-3/4 left-3/4 rounded-full w-24 h-24 bg-yellow-300  duration-200 hover:brightness-90 hover:duration-200 active:duration-200 active:scale-75 transition-all z-20" id="reminder-add">
+            <span class="flex justify-center items-center relative w-24 h-24">
+                <span class="absolute bg-gray-600 top-1/2 left-1/2 w-1 h-6 transform -translate-x-1/2 -translate-y-1/2"></span>
+                <span class="absolute bg-gray-600 top-1/2 left-1/2 w-6 h-1 transform -translate-x-1/2 -translate-y-1/2"></span>
+            </span>
+        </button>
+        <div id="reminder-form-bg" class="absolute w-screen h-screen bg-yellow-200 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 invisible"></div>
+        <form id="reminder-form" class="z-10 flex flex-col justify-evenly items-center bg-white gap-4 w-3/4 sm:w-3/5 h-3/4 border-black border-2 rounded-xl shadow-md p-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0">
+            <input class="bg-slate-50 text-xl font-semibold sm:w-4/5 sm:p-3 w-3/4 p-4 duration-300 hover:brightness-95 hover:duration-300 rounded-md" type="text" id="reminder-title" placeholder="Titre" required>
+            <input class="bg-slate-50 sm:w-4/5 sm:p-3 w-3/4 p-4 duration-300 hover:brightness-95 hover:duration-300 rounded-md" type="text" id="reminder-description" placeholder="Description" required>
+            <input class="bg-slate-50 sm:w-4/5 sm:p-3 w-3/4 p-4 duration-300 hover:brightness-95 hover:duration-300 rounded-md" type="datetime-local" id="reminder-date" required>
+            <button type="submit" class="w-64 p-2 rounded-lg bg-yellow-200 border-gray-600 border-2 hover:brightness-95 hover:duration-200 duration-200 active:scale-75">Ajouter un rappel</button>
+        </form>
+        <div id="reminder-list" class="pt-10 pb-10 pl-4 pr-4 rounded-xl bg-yellow-100 flex justify-evenly items-center gap-10 w-4/5 sm:w-2/3 h-72 overflow-x-hidden overflow-y-scroll flex-wrap"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

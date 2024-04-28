@@ -1,0 +1,36 @@
+{
+    "name": "LazyPiou",
+    "short_name": "LazyPiou",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "fullscreen",
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "description": "Application de rappels pour les personnes qui ont tendance à faire au dernier moment",
+    "screenshots": [
+        {
+        "src": "/public/images/screenshot-1.png",
+        "type": "image/png",
+        "sizes": "1913x982",
+        "form_factor": "wide"
+        },
+        {
+        "src": "/public/images/screenshot-2.png",
+        "type": "image/png",
+        "sizes": "726x974",
+        "form_factor": "wide"
+        }
+    ]
+}

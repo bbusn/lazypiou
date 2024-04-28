@@ -1,0 +1,14 @@
+{
+  "name": "lazypiou",
+  "version": "1.0.0",
+  "description": "A piou piou reminder manager pwa",
+  "main": "app.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./styles.css -o ./public/styles.css --watch"
+  },
+  "author": "Benoît Busnado, Noah Buisson",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}

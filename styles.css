@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .appear {
+        animation: appear 0.2s forwards;
+    }
+    .appear50 {
+        animation: appear50 0.2s forwards;
+    }
+    @keyframes appear {
+        0% {
+            transform: translate(-50%, -50%) scale(0%);
+            visibility: hidden;
+            opacity: 0;
+        }
+        1% {
+            transform: translate(-50%, -50%) scale(0%);
+            visibility: visible;
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(100%);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    @keyframes appear50 {
+        0% {
+            visibility: hidden;
+            opacity: 0;
+        }
+        1% {
+            visibility: visible;
+            opacity: 0;
+        }
+        100% {
+            visibility: visible;
+            opacity: 0.5;
+        }
+    }
+     /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #32322f #fef08a;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #fef08a;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #32322f;
+        border-radius: 40px;
+        border: 0px solid #32322f;
+    }
+  }
