@@ -2,17 +2,15 @@
 
 ![Logo](https://lazypiou.benoitbusnardo.fr/public/images/logo.png)
 
-
-Built using plain Javascript and Tailwind CSS.
-Hosted here :
-https://lazypiou.benoitbusnardo.fr
-
+Welcome to LazyPiou, a simple reminders manager built using plain Javascript and Tailwind CSS.
 
 ## Screenshots
 
-
 ![App Screenshot](https://lazypiou.benoitbusnardo.fr/public/images/screenshot-2.png)
 
+## Demonstration
+
+App hosted here : https://lazypiou.benoitbusnardo.fr
 
 ## Installation
 
